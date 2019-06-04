@@ -53,6 +53,10 @@ module.exports = class MenuController {
     process.exit();
   }
 
+  getContactCount(){
+    return this.contacts.length;
+  }
+
   getDate(){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');

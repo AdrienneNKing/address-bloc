@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^5.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
   }
 }
