@@ -57,6 +57,10 @@ module.exports = class MenuController {
     return this.contacts.length;
   }
 
+  remindMe(){
+    return `Learning is a life long pursuit`;
+  }
+
   getDate(){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
