@@ -1,17 +1,15 @@
 'use strict';
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Contacts', {
+    return queryInterface.addColumn('Contacts', 'email' {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      phone: {
+      email: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -25,6 +23,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Contacts');
+    return queryInterface.removeColumn('Contacts', 'email');
   }
 };
