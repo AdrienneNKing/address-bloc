@@ -1,6 +1,6 @@
 const ContactController = require("../controllers/ContactController");
 const sequelize = require("../db/models/index").sequelize;
-
+this.book = new ContactController();
 
 describe("ContactController", () => {
 
@@ -13,15 +13,14 @@ describe("ContactController", () => {
             done();
           });
        });
-     });
+});
 
       it("should be defined", () => {
         expect(ContactController).toBeDefined();
       });
 
 
-      describe("#getContacts()", () => {
-
+    describe("#getContacts()", () => {
      it("should return an empty array when no contacts are available", (done) => {
        this.book.getContacts()
        .then((contacts) => {
