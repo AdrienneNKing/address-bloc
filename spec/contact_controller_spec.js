@@ -1,6 +1,5 @@
 const ContactController = require("../controllers/ContactController");
 const sequelize = require("../db/models/index").sequelize;
-this.book = new ContactController();
 
 describe("ContactController", () => {
 
@@ -13,7 +12,7 @@ describe("ContactController", () => {
             done();
           });
        });
-});
+
 
       it("should be defined", () => {
         expect(ContactController).toBeDefined();
@@ -49,3 +48,4 @@ describe("ContactController", () => {
      });
 
    });
+});
