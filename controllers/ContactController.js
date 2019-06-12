@@ -20,15 +20,53 @@ module.exports = class ContactController {
         validate(val){
           return val !== "";
         }
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Contact's email - ",
+        validate(val){
+          return val !== "";
+        }
       }
     ];
   }
 
-  addContact(name, phone){
-    return Contact.create({name, phone})
+  addContact(name, phone, email){
+    return Contact.create({name, phone, email})
   }
 
   getContacts(){
     return Contact.findAll()
   }
+
+  iterativeSearch(contacts, target){
+    for(let contact of contacts){
+      if(contact.name.toLowerCase() === target.toLowerCase()){
+        return contact;
+      }
+    }
+    return null;
+  }
 }
+
+  binarySearch(contacts, target){
+    let min = 0:
+    let max = contacts.length - 1;
+    let mid;
+
+    while(min <= max){
+      mid = Math.floor((min+max) / 2);
+      let currentContact = contacts[mid];
+
+      if(currentContact.name > target){
+        max = mid - 1;
+      } else if(currentContact.name < target){
+        min = mid + 1;
+      } else {
+        return contacts[mid];
+      }
+    }
+
+    return null;
+  }
